@@ -28,14 +28,15 @@ export default function SearchForm() {
 
       <div className="mt-4 flex items-center gap-3">
         <span className="hidden shrink-0 text-sm text-muted lg:inline">Mọi người hay tìm:</span>
-        {/* Không wrap (R6): màn hẹp cuộn ngang, thanh cuộn ẩn. */}
+        {/* Không wrap (R6): màn hẹp cuộn ngang, thanh cuộn ẩn. Chip nền đặc: nền trong suốt thì hoa văn trống đồng
+            lộ qua, chip tan vào nền. */}
         <div className="scrollbar-clean min-w-0 overflow-x-auto py-0.5">
           <div className="flex items-center gap-2 px-1">
             {suggestionQueries.map((query) => (
               <Button
                 key={query}
                 variant="ghost"
-                className="h-8 min-h-8 shrink-0 rounded-full bg-foreground/5 px-3 py-0 text-foreground/70 hover:bg-foreground/10 hover:text-foreground"
+                className="h-8 min-h-8 shrink-0 rounded-full bg-surface px-3 py-0 text-foreground ring-1 ring-border-strong ring-inset hover:bg-background-hover hover:text-foreground"
               >
                 {query}
               </Button>

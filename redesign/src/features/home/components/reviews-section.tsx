@@ -12,7 +12,8 @@ interface ReviewsSectionProps {
   status?: ListStatus;
 }
 
-const gridClassName = "grid grid-cols-1 gap-3 md:grid-cols-3";
+// 1 cột tới lg: ở 768 ba cột hẹp làm mỗi thẻ dài 10–11 dòng chữ.
+const gridClassName = "grid grid-cols-1 gap-3 lg:grid-cols-3";
 
 // "Mọi người nói gì": cho thấy điểm khác biệt "người dùng thật chấm điểm" ngay trên trang chủ.
 export default function ReviewsSection({ status = "ready" }: ReviewsSectionProps) {

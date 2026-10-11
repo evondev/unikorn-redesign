@@ -102,7 +102,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         aria-hidden="true"
         onClick={onClose}
         className={cn(
-          "fixed inset-0 z-[65] bg-black/60 transition-opacity duration-350 xl:hidden",
+          "fixed inset-0 z-[65] bg-black/60 transition-opacity duration-350 nav:hidden",
           isOpen && "opacity-100",
           !isOpen && "pointer-events-none opacity-0",
         )}
@@ -112,7 +112,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         inert={!isOpen}
         className={cn(
           "fixed inset-y-0 left-0 z-[70] flex w-80 max-w-[85vw] flex-col border-r border-border bg-surface-overlay shadow-modal",
-          "transition-transform ease-[cubic-bezier(0.32,0.72,0,1)] xl:hidden",
+          "transition-transform ease-[cubic-bezier(0.32,0.72,0,1)] nav:hidden",
           isOpen && "translate-x-0 duration-500",
           !isOpen && "-translate-x-full duration-350",
         )}

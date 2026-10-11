@@ -33,18 +33,18 @@ export default function SiteHeader() {
     <>
       {/* Header trong mờ để hoa văn trống đồng phía sau còn thấy (P8: kính chỉ có nghĩa khi phía sau có hình).
           Trình duyệt không có backdrop-filter thì về nền đặc. Khung relative để panel menu canh theo khung. */}
-      <header className="sticky top-0 z-40 border-b border-border bg-header supports-[backdrop-filter]:bg-header/75 supports-[backdrop-filter]:backdrop-blur-md">
+      <header className="header-scroll-fill sticky top-0 z-40 border-b border-border bg-header supports-[backdrop-filter]:bg-header/75 supports-[backdrop-filter]:backdrop-blur-md">
         <div className={cn(pageContainerClassName, "relative flex h-16 items-center gap-2")}>
           <Button
             variant="ghost"
             icon={Menu}
             aria-label="Mở menu"
             onClick={() => setIsDrawerOpen(true)}
-            className="size-9 min-h-9 rounded-lg p-0 text-foreground/80 xl:hidden [&>svg]:size-5"
+            className="size-9 min-h-9 rounded-lg p-0 text-foreground/80 nav:hidden [&>svg]:size-5"
           />
           <Logo />
 
-          <nav className="ml-4 hidden xl:block" aria-label="Điều hướng chính">
+          <nav className="ml-4 hidden nav:block" aria-label="Điều hướng chính">
             <ul className="flex items-center gap-1">
               {navMenus.map((navMenu) => (
                 <NavMenuItem
@@ -73,7 +73,7 @@ export default function SiteHeader() {
               title="Tìm kiếm (⌘K)"
               className="hidden size-9 min-h-9 rounded-lg p-0 sm:inline-flex"
             />
-            <div className="hidden xl:block">
+            <div className="hidden nav:block">
               <LanguageMenu />
             </div>
             <ThemeMenu />

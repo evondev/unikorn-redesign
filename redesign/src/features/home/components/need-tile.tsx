@@ -10,12 +10,19 @@ interface NeedTileProps {
   onSelect: (needId: string) => void;
 }
 
-// Ô việc là ô chọn (choice-controls.md, Card chọn). Đang chọn: viền trung tính đậm 2px (viền + ring-1)
-// thay cho đỏ, để đỏ chỉ còn ở nút chính và brand.
+// Ô việc là ô chọn (choice-controls.md, Card chọn): đang chọn viền --border-focus + ring mờ,
+// nền đỏ rất nhạt và icon đỏ để đọc ra "đang chọn" chứ không phải lỗi.
 function getTileStateClasses(isSelected: boolean) {
   return cn(
-    isSelected && "border-selected ring-1 ring-selected hover:bg-surface",
+    isSelected && "border-focus bg-surface-selected ring-2 ring-focus hover:bg-surface-selected",
     !isSelected && "border-border-strong hover:bg-background-hover",
+  );
+}
+
+function getIconBoxClasses(isSelected: boolean) {
+  return cn(
+    isSelected && "bg-primary-light text-primary",
+    !isSelected && "bg-foreground/5 text-foreground/80",
   );
 }
 
@@ -30,7 +37,7 @@ export default function NeedTile({ need, isSelected, onSelect }: NeedTileProps) 
         getTileStateClasses(isSelected),
       )}
     >
-      <span className="grid size-10 place-items-center rounded-xl bg-foreground/5 text-foreground/80">
+      <span className={cn("grid size-10 place-items-center rounded-xl", getIconBoxClasses(isSelected))}>
         <need.icon className="size-5" aria-hidden />
       </span>
       <span className="min-w-0">

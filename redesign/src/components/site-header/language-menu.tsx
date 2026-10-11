@@ -46,7 +46,7 @@ export default function LanguageMenu() {
         aria-haspopup="menu"
         aria-expanded={isOpen}
         onClick={() => setIsOpen((isMenuOpen) => !isMenuOpen)}
-        className="h-9 min-h-9 gap-1.5 rounded-lg px-3 py-0 text-foreground/70 uppercase aria-expanded:bg-foreground/5 aria-expanded:text-foreground"
+        className="h-9 min-h-9 shrink-0 gap-1.5 rounded-lg px-3 py-0 whitespace-nowrap text-foreground/70 uppercase aria-expanded:bg-foreground/5 aria-expanded:text-foreground"
       >
         {selectedCode}
         <ChevronDown className="size-4 shrink-0 text-muted" aria-hidden />

@@ -42,8 +42,8 @@
   --success: #007a55;
   --success-bg: #ecfdf5;
 
-  /* Viền ô việc đang chọn: trung tính đậm thay cho đỏ, để đỏ chỉ còn ở nút chính và brand. */
-  --border-selected: var(--foreground);
+  /* Nền ô chọn dạng card đang chọn (ô việc): đỏ rất nhạt trên nền card. */
+  --surface-selected: color-mix(in srgb, var(--primary) 4%, var(--surface));
 
   --ring-focus: color-mix(in srgb, var(--primary) 14%, transparent);
   --border-focus: var(--primary); /* 4.7:1 trên nền trang */
@@ -92,8 +92,7 @@
   --success: #00d492;
   --success-bg: rgb(0 188 125 / 0.15);
 
-  /* Gần trắng đặc làm đường mảnh thì gắt (M22): hạ độ đục, vẫn trên 3:1. */
-  --border-selected: color-mix(in srgb, var(--foreground) 60%, transparent);
+  --surface-selected: color-mix(in srgb, var(--primary) 8%, var(--surface));
 
   --ring-focus: color-mix(in srgb, var(--primary) 22%, transparent);
   --border-focus: var(--primary);
@@ -106,12 +105,41 @@
   --elevation-modal: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
 }
 
+/* Mốc hiện menu chính trên header: đo từ 1120px hàng header vừa khít một hàng (logo, 4 menu, ngôn ngữ,
+   giao diện, đăng nhập, đăng sản phẩm), nên lấy 1136px cho có dư; dưới đó dùng nút ☰. Class `nav:` */
+@theme {
+  --breakpoint-nav: 71rem;
+}
+
 /* `dark:` theo class .dark trên <html>, không theo máy (M31). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Nền rê nút viền theo nền phía sau: trong khối trắng thì bản nhạt (tokens.css). */
 .bg-surface *,
 .bg-surface-overlay * { --button-hover: var(--button-hover-surface); }
+
+/* Header ở đầu trang trong suốt để hoa văn trống đồng chạy liền lên mép trên; cuộn xuống 96px thì nền mờ
+   và viền dưới hiện dần. Chỉ CSS (scroll-driven animation); trình duyệt chưa hỗ trợ thì giữ nền mờ như cũ. */
+@supports (animation-timeline: scroll()) {
+  .header-scroll-fill {
+    animation: header-scroll-fill linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 96px;
+  }
+}
+
+@keyframes header-scroll-fill {
+  from {
+    background-color: transparent;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+  }
+  to {
+    background-color: color-mix(in srgb, var(--header-bg) 80%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
+  }
+}
 
 /* Lật theme thì tắt transition một nhịp, không thì nền đổi tức thì mà nút, card chuyển màu lệch nhịp (M31). */
 .theme-switching,
@@ -144,8 +172,7 @@
   --color-success-bg: var(--success-bg);
   --color-header: var(--header-bg);
   --color-drum-ink: var(--drum-ink);
-  --border-color-selected: var(--border-selected);
-  --ring-color-selected: var(--border-selected);
+  --color-surface-selected: var(--surface-selected);
 
   --border-color-focus: var(--border-focus);
   --ring-color-focus: var(--ring-focus);
