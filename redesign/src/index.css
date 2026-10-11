@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* ===== TOKEN UNIKORN =====
+   Hai theme: SÁNG ẤM là mặc định (:root), TỐI là tuỳ chọn (.dark), nút đổi ở header.
+   Đổi thương hiệu: màu nhấn ở hai khối "MÀU NHẤN" (sáng và tối), font ở --app-font.
+   Ngoài các khối này không rải mã màu. */
+:root {
+  color-scheme: light;
+  --app-font: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ===== MÀU NHẤN, CHỖ 1 TRONG 2: NỀN SÁNG =====
+     --brand: đỏ Unikorn #ef5350, cho logo ".vn", chấm nhấn, hoa văn trống đồng (logo và trang trí
+     không tính tương phản chữ).
+     --primary: nền nút chính, viền focus. Đỏ đậm hơn brand một bậc để chữ trắng đạt 5:1 (#ef5350 chỉ 3.5:1). */
+  --brand: #ef5350;
+  --primary: #d32f2f;
+  --primary-hover: #dc3c39; /* lệch về phía nền một bậc: nền sáng thì nhạt đi */
+  --primary-foreground: #ffffff;
+  --primary-light: color-mix(in srgb, var(--primary) 8%, transparent);
+  /* ============================================= */
+
+  --background: #faf7f2;   /* trắng ngà ấm, không xám lạnh */
+  --surface: #ffffff;
+  --surface-overlay: #ffffff;
+  --foreground: #2b2422;   /* gần đen ngả nâu, 14:1 trên nền trang */
+  --muted: #6f6660;        /* 5.6:1 trên card, 5.3:1 trên nền trang */
+  --border: #f5f0ea;       /* đường tóc: viền card, khung menu, vạch chia (~1.1:1 trên trắng) */
+  --border-strong: #e6ded3; /* viền ô nhập, nút viền, ô chọn */
+  --tab-rail: color-mix(in srgb, var(--foreground) 10%, transparent);
+
+  --item-hover: #f6f1ea;
+  --secondary: #efe8df;
+  --secondary-hover: #e6ded3;
+  --background-hover: #f1ebe3;
+  --surface-hover: #fdfbf8;
+  /* Nền rê nút viền theo nền phía sau (tokens.css): trên card nhạt, trên nền trang đậm hơn viền. */
+  --button-hover-surface: #f6f1ea;
+  --button-hover-page: #e0d7cb;
+  --button-hover: var(--button-hover-page);
+
+  /* Trạng thái tốt (M7): số "+11 mới", badge "Mới". emerald-700 trên nền trắng 5.1:1. */
+  --success: #007a55;
+  --success-bg: #ecfdf5;
+
+  /* Viền ô việc đang chọn: trung tính đậm thay cho đỏ, để đỏ chỉ còn ở nút chính và brand. */
+  --border-selected: var(--foreground);
+
+  --ring-focus: color-mix(in srgb, var(--primary) 14%, transparent);
+  --border-focus: var(--primary); /* 4.7:1 trên nền trang */
+
+  /* Dải hồng rất nhạt đầu trang và nét trống đồng đỏ nhạt trên nền kem. */
+  --header-bg: #fbf1ec;
+  --hero-band: linear-gradient(180deg, #fbf1ec 0%, var(--background) 100%);
+  --drum-ink: color-mix(in srgb, var(--brand) 11%, transparent);
+
+  --elevation-popover: 0 10px 15px -3px rgb(43 36 34 / 0.1), 0 4px 6px -4px rgb(43 36 34 / 0.1);
+  --elevation-modal: 0 20px 25px -5px rgb(43 36 34 / 0.12), 0 8px 10px -6px rgb(43 36 34 / 0.12);
+  --radius: 0.75rem;
+}
+
+/* Bản tối: bảng màu của site gốc (nền #0f0f0f, card #1a1a1a, dải đỏ sẫm). */
+.dark {
+  color-scheme: dark;
+
+  /* ===== MÀU NHẤN, CHỖ 2 TRONG 2: NỀN TỐI =====
+     Nút giữ #d32f2f (chữ trắng 5:1); viền focus 3.9:1 trên nền trang. */
+  --brand: #ef5350;
+  --primary: #d32f2f;
+  --primary-hover: #c62828; /* lệch về phía nền: nền tối thì tối đi */
+  --primary-foreground: #ffffff;
+  --primary-light: color-mix(in srgb, var(--brand) 12%, transparent);
+  /* ============================================ */
+
+  --background: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface-overlay: #232323;
+  --foreground: #ededed;
+  --muted: #a1a1a1; /* 6.7:1 trên card, 7.4:1 trên nền trang */
+  --border: rgb(255 255 255 / 0.07);
+  --border-strong: rgb(255 255 255 / 0.12);
+  --tab-rail: color-mix(in srgb, var(--foreground) 12%, transparent);
+
+  --item-hover: rgb(255 255 255 / 0.05);
+  --secondary: rgb(255 255 255 / 0.08);
+  --secondary-hover: rgb(255 255 255 / 0.13);
+  --background-hover: #232323;
+  --surface-hover: #1f1f1f;
+  --button-hover-surface: rgb(255 255 255 / 0.08);
+  --button-hover-page: rgb(255 255 255 / 0.08);
+
+  /* emerald-400 trên nền overlay tối 7.8:1. */
+  --success: #00d492;
+  --success-bg: rgb(0 188 125 / 0.15);
+
+  /* Gần trắng đặc làm đường mảnh thì gắt (M22): hạ độ đục, vẫn trên 3:1. */
+  --border-selected: color-mix(in srgb, var(--foreground) 60%, transparent);
+
+  --ring-focus: color-mix(in srgb, var(--primary) 22%, transparent);
+  --border-focus: var(--primary);
+
+  --header-bg: #1d1313;
+  --hero-band: linear-gradient(180deg, #1d1313 0%, #0f0f0f 100%);
+  --drum-ink: color-mix(in srgb, var(--foreground) 6%, transparent);
+
+  --elevation-popover: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --elevation-modal: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+}
+
+/* `dark:` theo class .dark trên <html>, không theo máy (M31). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Nền rê nút viền theo nền phía sau: trong khối trắng thì bản nhạt (tokens.css). */
+.bg-surface *,
+.bg-surface-overlay * { --button-hover: var(--button-hover-surface); }
+
+/* Lật theme thì tắt transition một nhịp, không thì nền đổi tức thì mà nút, card chuyển màu lệch nhịp (M31). */
+.theme-switching,
+.theme-switching * { transition: none !important; }
+
+@theme inline {
+  --font-sans: var(--app-font);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-brand: var(--brand);
+  --color-primary-light: var(--primary-light);
+
+  --color-background: var(--background);
+  --color-background-hover: var(--background-hover);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-overlay: var(--surface-overlay);
+  --color-item-hover: var(--item-hover);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-tab-rail: var(--tab-rail);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-button-hover: var(--button-hover);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-header: var(--header-bg);
+  --color-drum-ink: var(--drum-ink);
+  --border-color-selected: var(--border-selected);
+  --ring-color-selected: var(--border-selected);
+
+  --border-color-focus: var(--border-focus);
+  --ring-color-focus: var(--ring-focus);
+
+  --shadow-popover: var(--elevation-popover);
+  --shadow-modal: var(--elevation-modal);
+}
+
+/* ===== THANH CUỘN TỰ ẨN (I18) =====
+   Ẩn bằng màu trong suốt, giữ bề rộng 4px. Màu đi qua biến trên chính khung cuộn để Chrome vẽ lại ngay khi rê. */
+* { --scrollbar-thumb: transparent; }
+*:hover { --scrollbar-thumb: color-mix(in srgb, var(--foreground) 16%, transparent); }
+.is-scrolling { --scrollbar-thumb: color-mix(in srgb, var(--foreground) 28%, transparent); }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--foreground) 40%, transparent); }
+
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+  *:hover { scrollbar-color: color-mix(in srgb, var(--foreground) 18%, transparent) transparent; }
+  .is-scrolling { scrollbar-color: color-mix(in srgb, var(--foreground) 28%, transparent) transparent; }
+}
+
+/* Chỉ cho hàng chip, hàng ô việc cuộn ngang: thanh cuộn dưới đáy hàng trông như lỗi. */
+.scrollbar-clean { scrollbar-width: none; }
+.scrollbar-clean::-webkit-scrollbar { display: none; }
+/* ===================================== */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

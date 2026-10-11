@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unikorn.vn · Khám phá sản phẩm công nghệ do người Việt làm</title>
+    <!-- Áp theme đã lưu trước khi vẽ, không nháy sáng/tối lúc tải (M31). Cùng khoá với src/constants/theme-options.ts. -->
+    <script>
+      (function () {
+        var preference = "light";
+        try { preference = localStorage.getItem("unikorn-theme") || "light"; } catch (error) {}
+        var isDark = preference === "dark" || (preference === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (isDark) document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body class="bg-background font-sans text-foreground antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
