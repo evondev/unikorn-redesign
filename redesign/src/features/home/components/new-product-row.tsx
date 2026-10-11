@@ -1,5 +1,5 @@
-import type { Product } from "../types";
-import ProductTile from "./product-tile";
+import { ProductTile } from "@/components/product-tile";
+import type { Product } from "@/types/product";
 
 interface NewProductRowProps {
   product: Product;

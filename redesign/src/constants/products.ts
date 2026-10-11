@@ -1,4 +1,4 @@
-import type { Product } from "../types";
+import type { Product } from "@/types/product";
 
 // Tên và câu giới thiệu lấy từ unikorn.vn. Số sao, lượt đánh giá, lượt bình chọn, giá, nền tảng là SỐ GIẢ.
 const productList: Product[] = [
@@ -31,6 +31,10 @@ const productList: Product[] = [
   { id: "seo-tu-dong", name: "SEO tự động", tagline: "SEO tự động bằng AI cho website Việt Nam", price: "Có gói trả phí", platform: "Web", rating: 4.7, reviewCount: 35, voteCount: 280 },
   { id: "chatgptx", name: "ChatGPTx", tagline: "Vibecoding với ChatGPT Web thông qua MCP", price: "Miễn phí", platform: "Tiện ích Chrome", rating: null, reviewCount: 0, voteCount: 15, launchedLabel: "Hôm qua" },
   { id: "aifree-dev", name: "aifree.dev", tagline: "Mọi ưu đãi AI miễn phí, kèm điều kiện rõ ràng", price: "Miễn phí", platform: "Web", rating: null, reviewCount: 0, voteCount: 15, launchedLabel: "Hôm nay" },
+  { id: "pacewalk", name: "Pacewalk", tagline: "Walk tracking & daily steps", price: "Miễn phí", platform: "iOS", rating: 4.7, reviewCount: 6, voteCount: 58 },
+  { id: "growtogetherforum", name: "Growtogetherforum", tagline: "Connect - Share: GrowForumTogether", price: "Miễn phí", platform: "Web", rating: null, reviewCount: 0, voteCount: 13, launchedLabel: "Hôm qua" },
+  { id: "riohub", name: "Tạo link TikTok Affiliate nhận hoa hồng", tagline: "Đổi giỏ TikTok Shop sang link hoa hồng cao hơn", price: "Miễn phí", platform: "Web", rating: 4.8, reviewCount: 11, voteCount: 94 },
+  { id: "together", name: "Together", tagline: "Gửi ảnh cho người thương mỗi ngày", price: "Miễn phí", platform: "iOS, Android", rating: 4.9, reviewCount: 27, voteCount: 183 },
   { id: "ecbot", name: "Ecbot", tagline: "AI Agent Messaging Framework For Business", price: "Có gói trả phí", platform: "Web", rating: null, reviewCount: 0, voteCount: 13, launchedLabel: "2 ngày trước" },
 ];
 

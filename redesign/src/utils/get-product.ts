@@ -1,4 +1,4 @@
-import { productsById } from "../constants/products";
+import { productsById } from "@/constants/products";
 
 export function getProduct(productId: string) {
   const product = productsById[productId];

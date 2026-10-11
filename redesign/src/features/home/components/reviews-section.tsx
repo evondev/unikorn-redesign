@@ -1,10 +1,10 @@
+import { ListError } from "@/components/list-error";
 import { TextLink } from "@/components/text-link";
 import { pageContainerClassName } from "@/constants/layout";
+import type { ListStatus } from "@/types/list-status";
 import { cn } from "@/utils/cn";
 
 import { latestReviews } from "../constants/reviews";
-import type { ListStatus } from "../types";
-import ListError from "./list-error";
 import ReviewCard from "./review-card";
 import ReviewCardSkeleton from "./review-card-skeleton";
 

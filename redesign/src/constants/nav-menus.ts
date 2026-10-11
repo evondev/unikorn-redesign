@@ -51,7 +51,7 @@ export const leaderboardGroups: NavLinkGroup[] = [
 ];
 
 export const communityLinks: NavLinkItem[] = [
-  { label: "Bảng tin", description: "Maker kể chuyện làm sản phẩm", href: "#", icon: Newspaper, isNew: true },
+  { label: "Bảng tin", description: "Maker kể chuyện làm sản phẩm", href: "/feed", icon: Newspaper, isNew: true },
   { label: "Thảo luận", description: "Hỏi đáp, chia sẻ kinh nghiệm", href: "#", icon: MessagesSquare },
   { label: "Đánh giá", description: "Người dùng chấm và nhận xét app", href: "#", icon: Star },
   { label: "Blog", description: "Bài viết tổng hợp từ Unikorn", href: "#", icon: BookOpen },

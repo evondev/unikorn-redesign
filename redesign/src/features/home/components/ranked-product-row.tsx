@@ -1,6 +1,6 @@
-import type { Product } from "../types";
-import ProductTile from "./product-tile";
-import VoteButton from "./vote-button";
+import { ProductTile } from "@/components/product-tile";
+import { VoteButton } from "@/components/vote-button";
+import type { Product } from "@/types/product";
 
 interface RankedProductRowProps {
   product: Product;

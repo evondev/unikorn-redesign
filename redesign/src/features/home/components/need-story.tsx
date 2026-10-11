@@ -2,8 +2,10 @@ import { TextLink } from "@/components/text-link";
 import { pageContainerClassName } from "@/constants/layout";
 import { cn } from "@/utils/cn";
 
-import type { ListStatus, Need } from "../types";
-import { formatNumber, getPhotoUrl, getProduct } from "../utils";
+import type { ListStatus } from "@/types/list-status";
+import { formatNumber, getPhotoUrl, getProduct } from "@/utils";
+
+import type { Need } from "../types";
 import ProductRow from "./product-row";
 import StatusList from "./status-list";
 

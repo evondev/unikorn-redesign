@@ -1,9 +1,10 @@
 import { cn } from "@/utils/cn";
 
+import { ProductTile } from "@/components/product-tile";
+import { StarRating } from "@/components/star-rating";
+import { getInitial, getProduct, getProductTone } from "@/utils";
+
 import type { Review } from "../types";
-import { getInitial, getProduct, getProductTone } from "../utils";
-import ProductTile from "./product-tile";
-import StarRating from "./star-rating";
 
 interface ReviewCardProps {
   review: Review;

@@ -1,4 +1,4 @@
-import { productTones } from "../constants/product-tones";
+import { productTones } from "@/constants/product-tones";
 
 // Cùng một sản phẩm luôn ra cùng một sắc, ở mọi khối, mọi lần tải.
 export function getProductTone(productId: string) {

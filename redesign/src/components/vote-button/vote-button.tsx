@@ -1,9 +1,8 @@
 import { ChevronUp } from "lucide-react";
 
 import { Button } from "@/components/button";
-
-import type { Product } from "../types";
-import { formatNumber } from "../utils";
+import type { Product } from "@/types/product";
+import { formatNumber } from "@/utils";
 
 interface VoteButtonProps {
   product: Product;

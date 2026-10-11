@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 
-import type { Product } from "../types";
-import { formatRating } from "../utils";
+import type { Product } from "@/types/product";
+import { formatRating } from "@/utils";
 
 interface ProductMetaProps {
   product: Product;

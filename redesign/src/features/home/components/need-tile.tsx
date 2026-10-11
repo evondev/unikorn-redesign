@@ -2,7 +2,7 @@ import { Button } from "@/components/button";
 import { cn } from "@/utils/cn";
 
 import type { Need } from "../types";
-import { formatNumber } from "../utils";
+import { formatNumber } from "@/utils";
 
 interface NeedTileProps {
   need: Need;

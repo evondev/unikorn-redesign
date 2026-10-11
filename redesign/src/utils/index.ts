@@ -1,3 +1,4 @@
+export { cn } from "./cn";
 export { formatNumber, formatRating } from "./format";
 export { getInitial } from "./get-initial";
 export { getPhotoUrl } from "./get-photo-url";

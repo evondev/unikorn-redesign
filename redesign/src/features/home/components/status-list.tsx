@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 
-import type { ListStatus } from "../types";
-import ListError from "./list-error";
+import { ListError } from "@/components/list-error";
+import type { ListStatus } from "@/types/list-status";
+
 import ListSkeletonRow from "./list-skeleton-row";
 
 interface StatusListProps {

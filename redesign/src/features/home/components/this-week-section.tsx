@@ -1,10 +1,10 @@
+import { ListCard } from "@/components/list-card";
 import { pageContainerClassName } from "@/constants/layout";
 import { cn } from "@/utils/cn";
 
 import { newLaunchProductIds, topThisWeekProductIds } from "../constants/home-lists";
-import type { ListStatus } from "../types";
-import { getProduct } from "../utils";
-import ListCard from "./list-card";
+import type { ListStatus } from "@/types/list-status";
+import { getProduct } from "@/utils";
 import NewProductRow from "./new-product-row";
 import RankedProductRow from "./ranked-product-row";
 import StatusList from "./status-list";

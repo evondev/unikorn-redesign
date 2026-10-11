@@ -1,6 +1,4 @@
-import { cn } from "@/utils/cn";
-
-import { getInitial, getProductTone } from "../utils";
+import { cn, getInitial, getProductTone } from "@/utils";
 
 interface ProductTileProps {
   productId: string;
